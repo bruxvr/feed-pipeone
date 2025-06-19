@@ -16,8 +16,8 @@ class PLGDashboard {
 
         {
           id: "PO-703",
-          type: "Nova Funcionalidade",
-          color: "#22C55E",
+          type: "Melhoria",
+          color: "blue",
           title:
             "Bloquear transferência/resolução de tickets de outros agentes",
           description:
