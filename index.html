@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema PLG - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Layout Principal -->
+    <div class="dashboard-layout">
+        <!-- Menu Lateral Esquerdo -->
+        <aside class="sidebar-left" id="sidebar-left">
+            <div class="sidebar-header">
+                <div class="logo-section">
+                    <span class="logo-icon">🚀</span>
+                    <span class="logo-text">Sistema PLG</span>
+                </div>
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            
+            <div class="profile-section">
+                <div class="profile-avatar">BX</div>
+                <div class="profile-info">
+                    <span class="profile-name">Bruno Xavier</span>
+                    <span class="profile-role">Admin</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" data-menu="dashboard">
+                            <span class="nav-icon">📊</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-menu="conversas">
+                            <span class="nav-icon">💬</span>
+                            <span class="nav-text">Conversas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-menu="pipeline">
+                            <span class="nav-icon">📋</span>
+                            <span class="nav-text">Pipeline</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-menu="bulk">
+                            <span class="nav-icon">📧</span>
+                            <span class="nav-text">Bulk</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-menu="contatos">
+                            <span class="nav-icon">👥</span>
+                            <span class="nav-text">Contatos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-menu="relatorios">
+                            <span class="nav-icon">📈</span>
+                            <span class="nav-text">Relatórios</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-menu="automacoes">
+                            <span class="nav-icon">🤖</span>
+                            <span class="nav-text">Automações</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-menu="configuracoes">
+                            <span class="nav-icon">⚙️</span>
+                            <span class="nav-text">Configurações</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Feed Central -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1 class="page-title">Dashboard PLG</h1>
+            </div>
+            
+            <div class="filters-section">
+                <div class="filter-buttons" id="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="nova-funcionalidade" style="--filter-color: #22C55E;">Nova Funcionalidade</button>
+                    <button class="filter-btn" data-filter="melhoria" style="--filter-color: #3B82F6;">Melhoria</button>
+                    <button class="filter-btn" data-filter="correcao" style="--filter-color: #F59E0B;">Correção</button>
+                    <button class="filter-btn" data-filter="integracao" style="--filter-color: #8B5CF6;">Integração</button>
+                    <button class="filter-btn" data-filter="beta" style="--filter-color: #EA580C;">Beta</button>
+                </div>
+            </div>
+            
+            <div class="cards-grid" id="cards-grid">
+                <!-- Cards serão inseridos dinamicamente via JavaScript -->
+            </div>
+        </main>
+
+        <!-- Sidebar Direita -->
+        <aside class="sidebar-right" id="sidebar-right">
+            <div class="news-header">
+                <h2 class="news-title">Últimas notícias</h2>
+                <button class="close-news-btn" id="close-news-btn" aria-label="Fechar notícias">
+                    <span>×</span>
+                </button>
+            </div>
+            
+            <div class="news-list" id="news-list">
+                <!-- Notícias serão inseridas dinamicamente via JavaScript -->
+            </div>
+        </aside>
+
+        <!-- Botão sino flutuante (quando sidebar direita fechada) -->
+        <button class="bell-btn hidden" id="bell-btn" aria-label="Abrir notícias">
+            🔔
+        </button>
+    </div>
+
+    <!-- Modal Popup -->
+    <div class="modal-overlay hidden" id="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Título</h3>
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="Fechar modal">
+                    <span>×</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Conteúdo do modal será inserido dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay para mobile -->
+    <div class="mobile-overlay hidden" id="mobile-overlay"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
