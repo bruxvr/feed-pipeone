@@ -1843,9 +1843,20 @@ select.form-control {
 }
 
 /* Timeline section */
-.timeline-section {
-  height: 100%;
+.timeline {
+  overflow-y: visible;
+  min-height: 400px;
 }
+
+.timeline-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-16);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
 
 .timeline-section .card__header {
   display: flex;

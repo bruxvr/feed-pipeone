@@ -20,21 +20,350 @@ const appData = {
     {"type": "success", "title": "Backup Concluído", "message": "Backup automático realizado", "time": "1h atrás"},
     {"type": "error", "title": "Falha de Conexão", "message": "Google Cloud apresentou instabilidade", "time": "2h atrás"}
   ],
-  "timeline": [
-    {"title": "Novo Recurso PLG", "description": "Automação de follow-up implementada", "time": "há 2h", "badge": "NOVO"},
-    {"title": "Workshop Gratuito", "description": "Como otimizar conversões", "time": "há 4h", "badge": "GRÁTIS"},
-    {"title": "Upgrade Disponível", "description": "Plano Pro com 50% de desconto", "time": "há 6h", "badge": "PRO"},
-    {"title": "Relatório Mensal", "description": "Análise de performance disponível", "time": "há 1 dia", "badge": "NOVO"},
-    {"title": "Integração API", "description": "Nova integração com Slack", "time": "há 2 dias", "badge": "NOVO"},
-    {"title": "Webinar PLG", "description": "Estratégias de crescimento", "time": "há 3 dias", "badge": "GRÁTIS"}
+
+"timeline": [
+
+    {
+      "title": "Mark as unread",
+      "description": "Lets agents flag conversations as unread, making it easier to revisit and prioritize important messages.",
+      "time": "há 23h",
+      "badge": "PO-202"
+    },
+    {
+      "title": "Block transfer/resolve for other agents' tickets",
+      "description": "Prevents agents from transferring or resolving tickets assigned to others, ensuring ticket ownership and accountability.",
+      "time": "há 3h",
+      "badge": "PO-703"
+    },
+    {
+      "title": "Remove \"take over\" prompt",
+      "description": "Removes the prompt asking if you want to take over a conversation already handled by another agent, streamlining workflow.",
+      "time": "há 14h",
+      "badge": "PO-755"
+    },
+    {
+      "title": "Quick template access via slash",
+      "description": "Instantly access frequently used message templates by typing \"/\" in the message field, speeding up responses.",
+      "time": "há 1 dia(s)",
+      "badge": "PO-653"
+    },
+    {
+      "title": "Display channel next to profile picture",
+      "description": "Displays the communication channel icon next to each contact’s profile photo, improving visual clarity and context.",
+      "time": "há 18h",
+      "badge": "PO-926"
+    },
+    {
+      "title": "Agent MT name toggle",
+      "description": "Allows admins to enable or disable the display of the agent's MT name in global settings for more customization.",
+      "time": "há 2 dia(s)",
+      "badge": "PO-178"
+    },
+    {
+      "title": "Automated responses 2.0 – name & email order + languages",
+      "description": "Collects name and email in a defined order and supports multiple languages in automated responses, enhancing data quality and user experience.",
+      "time": "há 11h",
+      "badge": "PO-678"
+    },
+    {
+      "title": "Automated responses 2.0 – flows & decision trees",
+      "description": "Enables the creation of complex decision trees and flows, allowing chatbots to handle more scenarios automatically.",
+      "time": "há 3 dia(s)",
+      "badge": "PO-390"
+    },
+    {
+      "title": "Automated responses 3.0 – stop after 3 incorrect attempts",
+      "description": "Automatically halts automation after three failed attempts, reducing user frustration and improving accuracy.",
+      "time": "há 7h",
+      "badge": "PO-834"
+    },
+    {
+      "title": "Automated responses 3.0 – ask & overwrite CRM name",
+      "description": "Allows the system to ask for and update the CRM name, even if one already exists, ensuring up-to-date information.",
+      "time": "há 6h",
+      "badge": "PO-717"
+    },
+    {
+      "title": "Chatbot – site auto-direct",
+      "description": "Automatically routes web chat conversations to the correct school, reducing manual intervention and errors.",
+      "time": "há 4 dia(s)",
+      "badge": "PO-663"
+    },
+    {
+      "title": "Chatbot – widget visual adjustments",
+      "description": "Adds new visual improvements to the site widget, making interactions more intuitive and appealing.",
+      "time": "há 12h",
+      "badge": "PO-1301"
+    },
+    {
+      "title": "Kanban – sort contacts by most recent",
+      "description": "Displays contacts in the Kanban board from the most recent to the oldest, helping agents focus on new leads.",
+      "time": "há 22h",
+      "badge": "PO-697"
+    },
+    {
+      "title": "Kanban – dynamic initial column",
+      "description": "Adds a dynamic initial column that automatically gathers all open conversations, ensuring no new lead is missed.",
+      "time": "há 5h",
+      "badge": "PO-657"
+    },
+    {
+      "title": "Kanban – limit view by agent + filter combo for managers",
+      "description": "Restricts agents to view only their own conversations, while managers and admins get advanced filtering options.",
+      "time": "há 1 dia(s)",
+      "badge": "PO-655/788"
+    },
+    {
+      "title": "Kanban – use contact box layout + tags",
+      "description": "Uses the same contact box design from the conversations screen in Kanban, now with visible tags for better organization.",
+      "time": "há 17h",
+      "badge": "PO-700"
+    },
+    {
+      "title": "Kanban 3.0 – complete redesign",
+      "description": "Introduces a fully redesigned Kanban board, offering a modern, intuitive, and efficient user experience.",
+      "time": "há 6 dia(s)",
+      "badge": "PO-693..."
+    },
+    {
+      "title": "Kanban 3.1 – mark as unread (react)",
+      "description": "Lets users mark a conversation as unread with a simple click, closing the screen and updating icons instantly.",
+      "time": "há 8h",
+      "badge": "PO-786"
+    },
+    {
+      "title": "Kanban 3.1 – remove \"+\" option per column",
+      "description": "Removes the add contact \"+\" from each column, centralizing the action in a single top button for cleaner navigation.",
+      "time": "há 2 dia(s)",
+      "badge": "PO-706"
+    },
+    {
+      "title": "Kanban 3.2 – slash command in conversations",
+      "description": "Enables use of slash commands within conversations, speeding up actions and improving productivity.",
+      "time": "há 9h",
+      "badge": "PO-828"
+    },
+    {
+      "title": "Kanban 3.2 – horizontal scroll for small screens",
+      "description": "Adds a horizontal scroll bar at the top for laptops and smaller screens, making navigation smoother.",
+      "time": "há 21h",
+      "badge": "PO-833"
+    },
+    {
+      "title": "Kanban 3.2 – top filter (status, unread, teams)",
+      "description": "Introduces a top filter for conversation status, unread, unassigned, and teams, making it easier to manage pipelines.",
+      "time": "há 3 dia(s)",
+      "badge": "PO-698"
+    },
+    {
+      "title": "Kanban 3.3 – UX for small screens",
+      "description": "Optimizes the Kanban interface for small screens, showing more leads and columns at once.",
+      "time": "há 13h",
+      "badge": "PO-839"
+    },
+    {
+      "title": "Kanban 3.3 – remove contact from pipeline",
+      "description": "Lets users remove a contact from the pipeline, keeping boards organized and up to date.",
+      "time": "há 15h",
+      "badge": "PO-775"
+    },
+    {
+      "title": "Kanban 3.3 – edit/create dynamic columns",
+      "description": "Allows users to add or edit columns in the Kanban, customizing the workflow to their needs.",
+      "time": "há 4 dia(s)",
+      "badge": "PO-774"
+    },
+    {
+      "title": "Kanban 3.3 – add new contact (no timeline)",
+      "description": "Enables adding a new contact directly to the Kanban, even if they have no previous timeline or conversation.",
+      "time": "há 6h",
+      "badge": "PO-851"
+    },
+    {
+      "title": "Kanban 3.3 – restrict remove contact to manager/admin",
+      "description": "Restricts the ability to remove contacts from the pipeline to managers and admins for better governance.",
+      "time": "há 7h",
+      "badge": "PO-894"
+    },
+    {
+      "title": "Kanban 3.1 – contact name search",
+      "description": "Lets users quickly find contacts by typing their name in the Kanban search field.",
+      "time": "há 1 dia(s)",
+      "badge": "PO-699"
+    },
+    {
+      "title": "Kanban – filter when switching sub-account",
+      "description": "Automatically applies filters when switching sub-accounts in the pipeline, saving time and clicks.",
+      "time": "há 19h",
+      "badge": "PO-891"
+    },
+    {
+      "title": "Kanban – search with underscore in name",
+      "description": "Supports searching for contacts whose names contain underscores, improving search flexibility.",
+      "time": "há 22h",
+      "badge": "PO-912"
+    },
+    {
+      "title": "Kanban – search with only 2 characters",
+      "description": "Allows searching for contacts with names as short as two characters, increasing accessibility.",
+      "time": "há 11h",
+      "badge": "PO-928"
+    },
+    {
+      "title": "Kanban – move contact to first column after taking over",
+      "description": "Automatically moves a contact to the first column after an agent takes over from a dynamic column.",
+      "time": "há 2 dia(s)",
+      "badge": "PO-895"
+    },
+    {
+      "title": "Kanban – prompt when sending message to new contact",
+      "description": "Prompts the agent to take ownership when sending a message to a new contact, ensuring accountability.",
+      "time": "há 3h",
+      "badge": "PO-898"
+    },
+    {
+      "title": "Kanban – refresh pipeline after taking over",
+      "description": "Instantly refreshes the pipeline for all agents when a conversation is taken over, keeping everyone updated.",
+      "time": "há 12h",
+      "badge": "PO-900"
+    },
+    {
+      "title": "Kanban – move contact after forwarding from dynamic col",
+      "description": "Automatically moves the contact to the first column after forwarding from a dynamic column.",
+      "time": "há 20h",
+      "badge": "PO-915"
+    },
+    {
+      "title": "Kanban – migrate conversation to correct team",
+      "description": "Ensures conversations are moved to the correct team when forwarded, improving organization and tracking.",
+      "time": "há 5 dia(s)",
+      "badge": "PO-941"
+    },
+    {
+      "title": "Kanban – audio message processing fix",
+      "description": "Fixes an issue where the previous conversation reloads when sending an audio message and switching contacts.",
+      "time": "há 2h",
+      "badge": "PO-958"
+    },
+    {
+      "title": "Kanban 3.5 – update stage from contact profile",
+      "description": "Lets agents view and update the pipeline stage directly from the contact’s profile sidebar.",
+      "time": "há 23h",
+      "badge": "PO-321"
+    },
+    {
+      "title": "Kanban 3.5 – log pipeline moves in timeline",
+      "description": "Automatically logs pipeline stage changes in the contact’s timeline for better tracking.",
+      "time": "há 1 dia(s)",
+      "badge": "PO-856"
+    },
+    {
+      "title": "Kanban 3.5 – react only on contact, not list",
+      "description": "Applies reactions only to the contact, not the entire list, avoiding unnecessary refreshes.",
+      "time": "há 6 dia(s)",
+      "badge": "PO-854/791"
+    },
+    {
+      "title": "Kanban 3.5 – filter by kanban stage in conversations",
+      "description": "Adds a filter by kanban stage directly in the conversations screen, making it easier to organize work.",
+      "time": "há 9h",
+      "badge": "PO-789"
+    },
+    {
+      "title": "Kanban 3.5 – create contact from pipeline",
+      "description": "Lets users create a new contact straight from the pipeline when not found in search, saving time.",
+      "time": "há 4 dia(s)",
+      "badge": "PO-855"
+    },
+    {
+      "title": "Kanban 3.5 – font size adjustment for screen size",
+      "description": "Adjusts font size dynamically for different screen sizes, improving readability and UX.",
+      "time": "há 7h",
+      "badge": "PO-927"
+    },
+    {
+      "title": "Kanban 3.5 – performance evolution",
+      "description": "Brings significant performance improvements to the new version, making the system faster and more reliable.",
+      "time": "há 13h",
+      "badge": "PO-884"
+    },
+    {
+      "title": "WABA – \"button\" type for templates",
+      "description": "Enables sending WhatsApp templates with interactive buttons, increasing engagement.",
+      "time": "há 17h",
+      "badge": "PO-681"
+    },
+    {
+      "title": "WABA – adjust MT link to plain text",
+      "description": "Converts MT links in the message box to plain text, improving clarity and reducing errors.",
+      "time": "há 3 dia(s)",
+      "badge": "PO-836"
+    },
+    {
+      "title": "WABA – display session time per contact",
+      "description": "Shows the session time for each contact (closed, open, or ongoing), providing better context for agents.",
+      "time": "há 6h",
+      "badge": "PO-922"
+    },
+    {
+      "title": "WhatsApp – direct integration",
+      "description": "Connects directly to WhatsApp without intermediaries, improving performance and reducing costs.",
+      "time": "há 2 dia(s)",
+      "badge": "PO-950"
+    },
+    {
+      "title": "Instagram – new integration format",
+      "description": "Updates the Instagram integration process to align with Meta’s latest changes, making setup easier.",
+      "time": "há 10h",
+      "badge": "PO-1013"
+    },
+    {
+      "title": "WABA – series of template sending fixes",
+      "description": "Delivers a series of fixes for template sending issues caused by recent Meta updates, ensuring reliability.",
+      "time": "há 5h",
+      "badge": "908, etc"
+    },
+    {
+      "title": "Triggers – move pipe stage on tag",
+      "description": "Automatically moves a contact’s pipeline stage when a specific tag is added, streamlining automation.",
+      "time": "há 2 dia(s)",
+      "badge": "PO-666"
+    },
+    {
+      "title": "Triggers – performance & logic improvements",
+      "description": "Introduces performance and logic enhancements to triggers, including anti-loop protections.",
+      "time": "há 18h",
+      "badge": "783, etc"
+    },
+    {
+      "title": "Triggers – condition operators (and, or, not)",
+      "description": "Enables use of logical operators (and, or, not) in triggers for more flexible automations.",
+      "time": "há 19h",
+      "badge": "PO-745"
+    },
+    {
+      "title": "Triggers – timing after last message",
+      "description": "Sends automated messages after a defined period since the last message, improving follow-up.",
+      "time": "há 4 dia(s)",
+      "badge": "PO-424"
+    },
+    {
+      "title": "Inbox tabs – new filter concept",
+      "description": "Introduces tabs to filter conversations by all, queue, or my conversations, making navigation easier.",
+      "time": "há 1 dia(s)",
+      "badge": "PO-981"
+    },
+    {
+      "title": "Templates – slash optimization for large volume",
+      "description": "Optimizes template search and filtering when using slash commands with a large number of templates.",
+      "time": "há 8h",
+      "badge": "PO-897"
+    }
   ],
   "helpSuggestions": [
-    {"category": "integration", "title": "Como integrar nova API?", "priority": "low"},
-    {"category": "integration", "title": "Configurar webhook", "priority": "medium"},
+    {"category": "integration", "title": "Exemplo", "priority": "medium"},
     {"category": "settings", "title": "Alterar configurações de usuário", "priority": "low"},
-    {"category": "settings", "title": "Gerenciar permissões", "priority": "high"},
-    {"category": "troubleshooting", "title": "Resolver erro de conexão", "priority": "medium"},
-    {"category": "troubleshooting", "title": "Problemas de sincronização", "priority": "low"}
+    {"category": "troubleshooting", "title": "Exemplo", "priority": "medium"}
   ],
   "menuItems": [
     {"id": "dashboard", "label": "Dashboard", "icon": "🏠", "active": true},
@@ -409,3 +738,4 @@ window.PipeOneApp = {
     showContentSection,
     setActiveNavItem
 };
+
