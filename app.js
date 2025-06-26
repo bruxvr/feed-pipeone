@@ -1,665 +1,411 @@
-// Dashboard PLG Application
-class PLGDashboard {
-  constructor() {
-    this.data = {
-      feedCards: [
-        {
-          id: "PO-202",
-          type: "Nova Funcionalidade",
-          color: "#22C55E",
-          title: "Marcar como não lida",
-          description:
-            "Permite que agentes sinalizem conversas como não lidas, facilitando o acompanhamento e priorização de mensagens importantes.",
-          image:
-            "https://via.placeholder.com/320x180/22C55E/ffffff?text=Marcar+como+n%C3%A3o+lida",
-        },
-
-        {
-          id: "PO-703",
-          type: "Melhoria",
-          color: "blue",
-          title:
-            "Bloquear transferência/resolução de tickets de outros agentes",
-          description:
-            "Impede que agentes transfiram ou resolvam tickets atribuídos a outros, garantindo propriedade e responsabilidade sobre os atendimentos.",
-          image:
-            "https://via.placeholder.com/320x180/22C55E/ffffff?text=Bloquear+transfer%C3%AAncia",
-        },
-
-        {
-          id: "PO-755",
-          type: "Melhoria de Fluxo",
-          color: "#22C55E",
-          title: "Retirar prompt 'deseja assumir'",
-          description:
-            "Remove o prompt que pergunta se deseja assumir uma conversa já em atendimento, tornando o fluxo mais ágil.",
-          image:
-            "https://via.placeholder.com/320x180/22C55E/ffffff?text=Retirar+prompt",
-        },
-
-        {
-          id: "PO-653",
-          type: "Nova Funcionalidade",
-          color: "#22C55E",
-          title: "Acesso rápido a templates via barra",
-          description:
-            "Permite acessar rapidamente templates de mensagens digitando '/' no campo de mensagem, acelerando as respostas.",
-          image:
-            "https://via.placeholder.com/320x180/22C55E/ffffff?text=Templates+via+Barra",
-        },
-
-        {
-          id: "PO-926",
-          type: "Melhoria",
-          color: "blue",
-          title: "Exibir canal junto à foto do perfil",
-          description:
-            "Exibe o ícone do canal de comunicação ao lado da foto do perfil de cada contato, melhorando a clareza visual e o contexto.",
-          image:
-            "https://via.placeholder.com/320x180/22C55E/ffffff?text=Exibir+Canal",
-        },
-        {
-          id: "PO-424",
-          type: "Nova Funcionalidade",
-          color: "#22C55E",
-          title: "Triggers – timing após última mensagem",
-          description:
-            "Envia mensagens automáticas após um período definido desde a última mensagem, melhorando o follow-up.",
-          image:
-            "https://via.placeholder.com/320x180/22C55E/ffffff?text=Triggers+Timing",
-        },
-
-        {
-          id: "PO-981",
-          type: "Nova Funcionalidade",
-          color: "#22C55E",
-          title: "Abas de inbox – novo conceito de filtro",
-          description:
-            "Introduz abas para filtrar conversas por todas, fila ou minhas, facilitando a navegação.",
-          image:
-            "https://via.placeholder.com/320x180/22C55E/ffffff?text=Inbox+Tabs",
-        },
-
-        {
-          id: "PO-897",
-          type: "Melhoria de Fluxo",
-          color: "blue",
-          title: "Templates – otimização do slash para grande volume",
-          description:
-            "Otimiza a busca e o filtro de templates ao usar comandos de barra com grande volume de templates.",
-          image:
-            "https://via.placeholder.com/320x180/22C55E/ffffff?text=Templates+Slash+Otimiza%C3%A7%C3%A3o",
-        },
-      ],
-      latestNews: [
-        {
-          id: "news-1",
-          title: "PipeOne atinge a marca de 1 milhão de usuários",
-          timestamp: "1 hora atrás",
-          thumbnail: "https://via.placeholder.com/40x40/4A154B/ffffff?text=S",
-          content:
-            "A comunidade PipeOne cresceu rapidamente, alcançando 1 milhão de usuários ativos. Agradecemos a todos pelo apoio contínuo e feedback valioso.",
-        },
-        {
-          id: "news-2",
-          title:
-            "Meta está implementando atualizações e pode apresentar instabilidade",
-          timestamp: "3 horas atrás",
-          thumbnail: "https://via.placeholder.com/40x40/DC2626/ffffff?text=🔒",
-          content:
-            "A Meta anunciou que está implementando atualizações de segurança críticas. Durante este período, alguns usuários podem enfrentar instabilidades temporárias na plataforma. Nossa equipe está monitorando a situação de perto e trabalhando para minimizar qualquer impacto.",
-        },
-        {
-          id: "news-3",
-          title: "Lançamento de aplicativo mobile",
-          timestamp: "5 horas atrás",
-          thumbnail: "https://via.placeholder.com/40x40/059669/ffffff?text=📱",
-          content:
-            "Estamos animados em anunciar o lançamento do nosso novo aplicativo mobile, disponível para iOS e Android. Agora você pode acessar todas as funcionalidades do PipeOne diretamente do seu celular, facilitando a gestão de tarefas e comunicação em qualquer lugar.",
-        },
-        {
-          id: "news-4",
-          title: "Novo tutorial de onboarding ativo",
-          timestamp: "8 horas atrás",
-          thumbnail: "https://via.placeholder.com/40x40/7C3AED/ffffff?text=📚",
-          content:
-            "Lançamos um tutorial interativo para novos usuários com passo-a-passo completo das principais funcionalidades.",
-        },
-        {
-          id: "news-5",
-          title:
-            "Marcio, CEO do PipeOne, foi convidado para palestrar na TEDx em 2026, que ocorrerá em Vancouver",
-          timestamp: "3 dias atrás",
-          thumbnail: "https://via.placeholder.com/40x40/DB2777/ffffff?text=🎨",
-          content:
-            "Marcio, CEO do PipeOne, foi convidado para compartilhar sua visão sobre o futuro da tecnologia e inovação. A palestra abordará como a PipeOne está moldando o futuro do trabalho colaborativo e a importância da comunidade no desenvolvimento de soluções tecnológicas.",
-        },
-        {
-          id: "news-6",
-          title: "Gabs fez mágica e agora tudo está mais rápido",
-          timestamp: "1 dia atrás",
-          thumbnail: "https://via.placeholder.com/40x40/B45309/ffffff?text=🏆",
-          content:
-            "Após otimizações de performance, o tempo de resposta do sistema foi reduzido em 50%. Agradecemos ao Gabs pela dedicação e trabalho árduo! Bruxo!",
-        },
-        {
-          id: "news-7",
-          title: "Google anuncia parceria com a startup PipeOne",
-          timestamp: "2 dias atrás",
-          thumbnail: "https://via.placeholder.com/40x40/EA580C/ffffff?text=📊",
-          content:
-            "Google e PipeOne firmaram uma parceria estratégica para integrar serviços de IA e machine learning, melhorando a análise de dados e insights para nossos usuários.",
-        },
-      ],
-    };
-
-    this.state = {
-      sidebarCollapsed: false,
-      newsOpen: true,
-      activeFilter: "all",
-      isMobile: window.innerWidth <= 768,
-    };
-
-    this.elements = {};
-    this.init();
+// Application data
+const appData = {
+  "channels": [
+    {"name": "Meta", "status": "online", "uptime": "99.9%", "lastChecked": "há 1 min"},
+    {"name": "WhatsApp", "status": "online", "uptime": "99.1%", "lastChecked": "há 2 min"},
+    {"name": "OpenAI", "status": "warning", "uptime": "98.5%", "lastChecked": "há 5 min"},
+    {"name": "AWS", "status": "online", "uptime": "99.9%", "lastChecked": "há 3 min"},
+    {"name": "Google Cloud", "status": "offline", "uptime": "97.2%", "lastChecked": "há 15 min"}
+  ],
+  "metrics": {
+    "conversasAbertas": 23,
+    "conversasResolvidas": 156,
+    "conversasEmPausa": 7,
+    "conversasEmAndamento": 12,
+    "mensagensNaoLidas": 45
+  },
+  "notifications": [
+    {"type": "info", "title": "Atualização de Sistema", "message": "Nova versão disponível", "time": "10 min atrás"},
+    {"type": "warning", "title": "Limite de API", "message": "OpenAI próximo ao limite", "time": "25 min atrás"},
+    {"type": "success", "title": "Backup Concluído", "message": "Backup automático realizado", "time": "1h atrás"},
+    {"type": "error", "title": "Falha de Conexão", "message": "Google Cloud apresentou instabilidade", "time": "2h atrás"}
+  ],
+  "timeline": [
+    {"title": "Novo Recurso PLG", "description": "Automação de follow-up implementada", "time": "há 2h", "badge": "NOVO"},
+    {"title": "Workshop Gratuito", "description": "Como otimizar conversões", "time": "há 4h", "badge": "GRÁTIS"},
+    {"title": "Upgrade Disponível", "description": "Plano Pro com 50% de desconto", "time": "há 6h", "badge": "PRO"},
+    {"title": "Relatório Mensal", "description": "Análise de performance disponível", "time": "há 1 dia", "badge": "NOVO"},
+    {"title": "Integração API", "description": "Nova integração com Slack", "time": "há 2 dias", "badge": "NOVO"},
+    {"title": "Webinar PLG", "description": "Estratégias de crescimento", "time": "há 3 dias", "badge": "GRÁTIS"}
+  ],
+  "helpSuggestions": [
+    {"category": "integration", "title": "Como integrar nova API?", "priority": "low"},
+    {"category": "integration", "title": "Configurar webhook", "priority": "medium"},
+    {"category": "settings", "title": "Alterar configurações de usuário", "priority": "low"},
+    {"category": "settings", "title": "Gerenciar permissões", "priority": "high"},
+    {"category": "troubleshooting", "title": "Resolver erro de conexão", "priority": "medium"},
+    {"category": "troubleshooting", "title": "Problemas de sincronização", "priority": "low"}
+  ],
+  "menuItems": [
+    {"id": "dashboard", "label": "Dashboard", "icon": "🏠", "active": true},
+    {"id": "conversas", "label": "Conversas", "icon": "💬", "active": false},
+    {"id": "pipeline", "label": "Pipeline", "icon": "📊", "active": false},
+    {"id": "bulk", "label": "Bulk", "icon": "📦", "active": false},
+    {"id": "contatos", "label": "Contatos", "icon": "👥", "active": false},
+    {"id": "relatorios", "label": "Relatórios", "icon": "📈", "active": false},
+    {"id": "automacoes", "label": "Automações", "icon": "⚙️", "active": false},
+    {"id": "configuracoes", "label": "Configurações", "icon": "🔧", "active": false}
+  ],
+  "user": {
+    "name": "Admin",
+    "role": "Usuário",
+    "avatar": "👤"
   }
+};
 
-  init() {
-    this.cacheElements();
-    this.bindEvents();
-    this.renderCards();
-    this.renderNews();
-    this.setupInitialState();
-    this.setupKeyboardNavigation();
-  }
+// DOM Elements
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
+const appLayout = document.querySelector('.app-layout');
+const navLinks = document.querySelectorAll('.nav-link');
+const contentSections = document.querySelectorAll('.content-section');
+const notificationBtn = document.getElementById('notificationBtn');
+const notificationDropdown = document.getElementById('notificationDropdown');
+const notificationList = document.getElementById('notificationList');
+const needHelpBtn = document.getElementById('needHelpBtn');
+const modalOverlay = document.getElementById('modalOverlay');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const sendHelpBtn = document.getElementById('sendHelpBtn');
+const helpInput = document.getElementById('helpInput');
+const helpFeedback = document.getElementById('helpFeedback');
 
-  cacheElements() {
-    this.elements = {
-      dashboardLayout: document.querySelector(".dashboard-layout"),
-      hamburgerBtn: document.getElementById("hamburger-btn"),
-      filterButtons: document.getElementById("filter-buttons"),
-      cardsGrid: document.getElementById("cards-grid"),
-      sidebarRight: document.getElementById("sidebar-right"),
-      closeNewsBtn: document.getElementById("close-news-btn"),
-      bellBtn: document.getElementById("bell-btn"),
-      newsList: document.getElementById("news-list"),
-      modalOverlay: document.getElementById("modal-overlay"),
-      modalTitle: document.getElementById("modal-title"),
-      modalBody: document.getElementById("modal-body"),
-      modalCloseBtn: document.getElementById("modal-close-btn"),
-      mobileOverlay: document.getElementById("mobile-overlay"),
-      sidebarLeft: document.querySelector(".sidebar-left"),
-      navLinks: document.querySelectorAll(".nav-link"),
-    };
-  }
+// Initialize the application
+document.addEventListener('DOMContentLoaded', function() {
+    initializeStatusGrid();
+    initializeMetrics();
+    initializeNotifications();
+    initializeTimeline();
+    initializeHelpModal();
+    initializeSidebar();
+    setupEventListeners();
+});
 
-  bindEvents() {
-    // Hamburger menu toggle
-    this.elements.hamburgerBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      this.toggleSidebar();
-    });
-
-    // Filter buttons
-    this.elements.filterButtons.addEventListener("click", (e) => {
-      if (e.target.classList.contains("filter-btn")) {
-        e.preventDefault();
-        this.handleFilterClick(e.target);
-      }
-    });
-
-    // News sidebar controls
-    this.elements.closeNewsBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      this.closeNews();
-    });
-
-    this.elements.bellBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      this.openNews();
-    });
-
-    // Modal controls
-    this.elements.modalCloseBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      this.closeModal();
-    });
-
-    this.elements.modalOverlay.addEventListener("click", (e) => {
-      if (e.target === this.elements.modalOverlay) {
-        this.closeModal();
-      }
-    });
-
-    // Mobile overlay
-    this.elements.mobileOverlay.addEventListener("click", () => {
-      this.closeMobileSidebar();
-    });
-
-    // Navigation links
-    this.elements.navLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.handleNavigation(link);
-      });
-    });
-
-    // Keyboard events
-    document.addEventListener("keydown", (e) => {
-      this.handleKeyboardEvents(e);
-    });
-
-    // Resize events
-    window.addEventListener(
-      "resize",
-      this.debounce(() => {
-        this.handleResize();
-      }, 250)
-    );
-  }
-
-  renderCards() {
-    const filteredCards = this.getFilteredCards();
-    console.log(
-      "Rendering cards:",
-      filteredCards.length,
-      "cards for filter:",
-      this.state.activeFilter
-    );
-
-    const cardsHTML = filteredCards
-      .map((card) => this.createCardHTML(card))
-      .join("");
-    this.elements.cardsGrid.innerHTML = cardsHTML;
-
-    // Add click events to cards
-    this.elements.cardsGrid
-      .querySelectorAll(".plg-card")
-      .forEach((cardElement) => {
-        cardElement.addEventListener("click", (e) => {
-          e.preventDefault();
-          const cardId = cardElement.dataset.cardId;
-          const card = this.data.feedCards.find((c) => c.id === cardId);
-          if (card) {
-            this.openModal(card, "card");
-          }
-        });
-
-        // Add keyboard support
-        cardElement.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            cardElement.click();
-          }
-        });
-      });
-  }
-
-  createCardHTML(card) {
-    return `
-            <div class="plg-card" data-card-id="${card.id}" tabindex="0" role="button" aria-label="Abrir detalhes do ${card.title}">
-                <div class="card-header">
-                    <span class="card-badge">${card.id}</span>
-                    <span class="card-tag" style="--tag-color: ${card.color}">${card.type}</span>
-                </div>
-                <div class="card-image" style="background-image: url('${card.image}')"></div>
-                <div class="card-content">
-                    <h3 class="card-title">${card.title}</h3>
-                    <p class="card-description">${card.description}</p>
-                </div>
-            </div>
-        `;
-  }
-
-  renderNews() {
-    const newsHTML = this.data.latestNews
-      .map((news) => this.createNewsHTML(news))
-      .join("");
-    this.elements.newsList.innerHTML = newsHTML;
-
-    // Add click events to news items
-    this.elements.newsList
-      .querySelectorAll(".news-item")
-      .forEach((newsElement) => {
-        newsElement.addEventListener("click", (e) => {
-          e.preventDefault();
-          const newsId = newsElement.dataset.newsId;
-          const news = this.data.latestNews.find((n) => n.id === newsId);
-          if (news) {
-            this.openModal(news, "news");
-          }
-        });
-
-        // Add keyboard support
-        newsElement.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            newsElement.click();
-          }
-        });
-      });
-  }
-
-  createNewsHTML(news) {
-    return `
-            <div class="news-item" data-news-id="${news.id}" tabindex="0" role="button" aria-label="Abrir notícia: ${news.title}">
-                <div class="news-thumbnail" style="background-image: url('${news.thumbnail}')"></div>
-                <div class="news-content">
-                    <h4 class="news-title-item">${news.title}</h4>
-                    <span class="news-timestamp">${news.timestamp}</span>
-                </div>
-            </div>
-        `;
-  }
-
-  getFilteredCards() {
-    if (this.state.activeFilter === "all") {
-      return this.data.feedCards;
-    }
-
-    const filterMap = {
-      "nova-funcionalidade": "Nova Funcionalidade",
-      melhoria: "Melhoria",
-      correcao: "Correção",
-      integracao: "Integração",
-      beta: "Beta",
-    };
-
-    const filterType = filterMap[this.state.activeFilter];
-    return this.data.feedCards.filter((card) => card.type === filterType);
-  }
-
-  handleFilterClick(button) {
-    const filter = button.dataset.filter;
-    console.log("Filter clicked:", filter);
-
-    this.state.activeFilter = filter;
-
-    // Update active states
-    document.querySelectorAll(".filter-btn").forEach((btn) => {
-      btn.classList.remove("active");
-    });
-    button.classList.add("active");
-
-    // Re-render cards with animation
-    this.animateCardsTransition(() => {
-      this.renderCards();
-    });
-
-    // Announce filter change
-    this.announceFilterChange(button.textContent);
-  }
-
-  animateCardsTransition(callback) {
-    this.elements.cardsGrid.style.transition =
-      "opacity 0.2s ease, transform 0.2s ease";
-    this.elements.cardsGrid.style.opacity = "0";
-    this.elements.cardsGrid.style.transform = "translateY(10px)";
-
-    setTimeout(() => {
-      callback();
-      this.elements.cardsGrid.style.opacity = "1";
-      this.elements.cardsGrid.style.transform = "translateY(0)";
-    }, 200);
-  }
-
-  toggleSidebar() {
-    console.log(
-      "Toggle sidebar clicked, current state:",
-      this.state.sidebarCollapsed
-    );
-
-    this.state.sidebarCollapsed = !this.state.sidebarCollapsed;
-
-    if (this.state.isMobile) {
-      this.elements.sidebarLeft.classList.toggle("mobile-open");
-      this.elements.mobileOverlay.classList.toggle("active");
-    } else {
-      this.elements.dashboardLayout.classList.toggle(
-        "sidebar-collapsed",
-        this.state.sidebarCollapsed
-      );
-    }
-
-    console.log("New sidebar state:", this.state.sidebarCollapsed);
-
-    // Announce state change
-    const state = this.state.sidebarCollapsed ? "colapsado" : "expandido";
-    this.announce(`Menu lateral ${state}`);
-  }
-
-  closeNews() {
-    this.state.newsOpen = false;
-    this.elements.dashboardLayout.classList.add("news-closed");
-    this.elements.bellBtn.classList.remove("hidden");
-    this.announce("Painel de notícias fechado");
-  }
-
-  openNews() {
-    this.state.newsOpen = true;
-    this.elements.dashboardLayout.classList.remove("news-closed");
-    this.elements.bellBtn.classList.add("hidden");
-    this.announce("Painel de notícias aberto");
-  }
-
-  closeMobileSidebar() {
-    this.elements.sidebarLeft.classList.remove("mobile-open");
-    this.elements.mobileOverlay.classList.remove("active");
-    this.state.sidebarCollapsed = true;
-  }
-
-  openModal(item, type) {
-    const isCard = type === "card";
-
-    this.elements.modalTitle.textContent = item.title;
-
-    const modalContent = `
-            ${
-              isCard
-                ? `
-                <div class="modal-badge" style="background-color: ${item.color}; color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: bold; margin-bottom: 16px; display: inline-block;">
-                    ${item.id}
-                </div>
-                <img src="${item.image}" alt="${item.title}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;">
-            `
-                : ""
-            }
-            <div style="margin-bottom: 16px;">
-                <p style="font-size: 16px; line-height: 1.5; color: var(--color-text); margin: 0;">
-                    ${isCard ? item.description : item.content}
-                </p>
-            </div>
-            ${
-              !isCard
-                ? `
-                <div style="font-size: 12px; color: var(--color-text-secondary);">
-                    ${item.timestamp}
-                </div>
-            `
-                : ""
-            }
-            <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: flex-end;">
-                <button class="btn btn--secondary" onclick="plgDashboard.closeModal()">Fechar</button>
-                ${
-                  isCard
-                    ? '<button class="btn btn--primary">Ver detalhes</button>'
-                    : ""
-                }
-            </div>
-        `;
-
-    this.elements.modalBody.innerHTML = modalContent;
-    this.elements.modalOverlay.classList.remove("hidden");
-
-    // Focus management
-    setTimeout(() => {
-      this.elements.modalCloseBtn.focus();
-    }, 100);
-
-    // Announce modal open
-    this.announce(`Modal aberto: ${item.title}`);
-  }
-
-  closeModal() {
-    this.elements.modalOverlay.classList.add("hidden");
-    this.announce("Modal fechado");
-  }
-
-  handleNavigation(link) {
-    // Update active states
-    this.elements.navLinks.forEach((nav) => nav.classList.remove("active"));
-    link.classList.add("active");
-
-    const menuType = link.dataset.menu;
-    this.announce(
-      `Navegando para ${link.querySelector(".nav-text").textContent}`
-    );
-
-    // Close mobile sidebar after navigation
-    if (this.state.isMobile) {
-      this.closeMobileSidebar();
-    }
-  }
-
-  handleKeyboardEvents(e) {
-    // ESC key closes modal or mobile sidebar
-    if (e.key === "Escape") {
-      if (!this.elements.modalOverlay.classList.contains("hidden")) {
-        this.closeModal();
-      } else if (
-        this.state.isMobile &&
-        this.elements.sidebarLeft.classList.contains("mobile-open")
-      ) {
-        this.closeMobileSidebar();
-      }
-    }
-  }
-
-  handleResize() {
-    const wasMobile = this.state.isMobile;
-    this.state.isMobile = window.innerWidth <= 768;
-
-    if (wasMobile !== this.state.isMobile) {
-      // Reset mobile states when switching between mobile/desktop
-      if (this.state.isMobile) {
-        this.elements.sidebarLeft.classList.remove("mobile-open");
-        this.elements.mobileOverlay.classList.remove("active");
-      } else {
-        this.elements.dashboardLayout.classList.toggle(
-          "sidebar-collapsed",
-          this.state.sidebarCollapsed
-        );
-      }
-    }
-  }
-
-  setupInitialState() {
-    // Set initial filter state
-    const activeFilterBtn = document.querySelector(".filter-btn.active");
-    if (activeFilterBtn) {
-      this.state.activeFilter = activeFilterBtn.dataset.filter;
-    }
-
-    // Apply initial sidebar state
-    if (this.state.sidebarCollapsed && !this.state.isMobile) {
-      this.elements.dashboardLayout.classList.add("sidebar-collapsed");
-    }
-
-    // Apply initial news state
-    if (!this.state.newsOpen) {
-      this.elements.dashboardLayout.classList.add("news-closed");
-      this.elements.bellBtn.classList.remove("hidden");
-    }
-  }
-
-  setupKeyboardNavigation() {
-    // Keyboard navigation will be handled by individual event listeners
-    // This ensures proper event handling for all interactive elements
-  }
-
-  announce(message) {
-    // Create announcement for screen readers
-    const announcement = document.createElement("div");
-    announcement.setAttribute("aria-live", "polite");
-    announcement.setAttribute("aria-atomic", "true");
-    announcement.className = "sr-only";
-    announcement.textContent = message;
-
-    document.body.appendChild(announcement);
-
-    setTimeout(() => {
-      if (document.body.contains(announcement)) {
-        document.body.removeChild(announcement);
-      }
-    }, 1000);
-  }
-
-  announceFilterChange(filterName) {
-    this.announce(`Filtro ativo: ${filterName}`);
-  }
-
-  debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  }
-
-  // Public methods for debugging
-  getCurrentState() {
-    return { ...this.state };
-  }
-
-  resetState() {
-    this.state = {
-      sidebarCollapsed: false,
-      newsOpen: true,
-      activeFilter: "all",
-      isMobile: window.innerWidth <= 768,
-    };
-    location.reload();
-  }
+// Initialize sidebar navigation
+function initializeSidebar() {
+    // Set initial active state
+    const activeSection = 'dashboard';
+    showContentSection(activeSection);
+    setActiveNavItem(activeSection);
 }
 
-// Initialize application when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("🚀 PLG Dashboard initializing...");
+// Show content section
+function showContentSection(sectionId) {
+    // Hide all content sections
+    contentSections.forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Show the selected section
+    const targetSection = document.getElementById(`${sectionId}-content`);
+    if (targetSection) {
+        targetSection.classList.add('active');
+    }
+}
 
-  // Initialize the main application
-  window.plgDashboard = new PLGDashboard();
+// Set active navigation item
+function setActiveNavItem(sectionId) {
+    // Remove active class from all nav links
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // Add active class to the selected nav link
+    const targetLink = document.querySelector(`[data-section="${sectionId}"]`);
+    if (targetLink) {
+        targetLink.classList.add('active');
+    }
+}
 
-  console.log("🚀 PLG Dashboard loaded successfully!");
-  console.log("📊 Current state:", window.plgDashboard.getCurrentState());
-  console.log(
-    "⌨️  Keyboard shortcuts: ESC to close modals, Enter/Space on cards"
-  );
-  console.log(
-    "🛠️  Debug commands: plgDashboard.resetState(), plgDashboard.getCurrentState()"
-  );
-});
+// Handle navigation
+function handleNavigation(sectionId) {
+    showContentSection(sectionId);
+    setActiveNavItem(sectionId);
+    
+    // Close sidebar on mobile after navigation
+    if (window.innerWidth <= 768) {
+        sidebar.classList.remove('show');
+    }
+}
 
-// Handle browser back/forward navigation
-window.addEventListener("popstate", () => {
-  console.log("Navigation detected");
-});
+// Toggle sidebar (for mobile)
+function toggleSidebar() {
+    sidebar.classList.toggle('show');
+}
 
-// Handle page visibility changes
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") {
-    console.log("Page visible - refreshing data if needed");
-  }
-});
+// Populate status grid
+function initializeStatusGrid() {
+    const statusGrid = document.getElementById('statusGrid');
+    
+    appData.channels.forEach(channel => {
+        const statusItem = document.createElement('div');
+        statusItem.className = 'status-item';
+        
+        statusItem.innerHTML = `
+            <div class="status-indicator ${channel.status}"></div>
+            <div class="status-details">
+                <h3>${channel.name}</h3>
+                <p>Uptime: ${channel.uptime}</p>
+                <p>Última verificação: ${channel.lastChecked}</p>
+            </div>
+        `;
+        
+        statusGrid.appendChild(statusItem);
+    });
+}
 
-// Error handling
-window.addEventListener("error", (event) => {
-  console.error("PLG Dashboard Error:", event.error);
-});
+// Populate metrics
+function initializeMetrics() {
+    const metricsGrid = document.getElementById('metricsGrid');
+    
+    const metricsConfig = [
+        { key: 'conversasAbertas', label: 'Conversas Abertas', class: 'abertas' },
+        { key: 'conversasResolvidas', label: 'Conversas Resolvidas', class: 'resolvidas' },
+        { key: 'conversasEmPausa', label: 'Conversas em Pausa', class: 'pausa' },
+        { key: 'conversasEmAndamento', label: 'Conversas em Andamento', class: 'andamento' },
+        { key: 'mensagensNaoLidas', label: 'Mensagens Não Lidas', class: 'nao-lidas' }
+    ];
+    
+    metricsConfig.forEach(metric => {
+        const metricCard = document.createElement('div');
+        metricCard.className = 'metric-card';
+        
+        metricCard.innerHTML = `
+            <div class="metric-number ${metric.class}">${appData.metrics[metric.key]}</div>
+            <p class="metric-label">${metric.label}</p>
+        `;
+        
+        metricsGrid.appendChild(metricCard);
+    });
+}
 
-window.addEventListener("unhandledrejection", (event) => {
-  console.error("Unhandled Promise Rejection:", event.reason);
-});
+// Populate notifications
+function initializeNotifications() {
+    appData.notifications.forEach(notification => {
+        const notificationItem = document.createElement('div');
+        notificationItem.className = `notification-item ${notification.type}`;
+        
+        notificationItem.innerHTML = `
+            <h4>${notification.title}</h4>
+            <p>${notification.message}</p>
+            <div class="time">${notification.time}</div>
+        `;
+        
+        notificationList.appendChild(notificationItem);
+    });
+}
+
+// Populate timeline
+function initializeTimeline() {
+    const timeline = document.getElementById('timeline');
+    
+    appData.timeline.forEach(item => {
+        const timelineItem = document.createElement('div');
+        timelineItem.className = 'timeline-item';
+        
+        const badgeClass = item.badge.toLowerCase().replace('ú', 'u').replace('á', 'a');
+        
+        timelineItem.innerHTML = `
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">${item.title}</h3>
+                    <span class="timeline-badge ${badgeClass}">${item.badge}</span>
+                </div>
+                <p class="timeline-description">${item.description}</p>
+                <div class="timeline-time">${item.time}</div>
+            </div>
+        `;
+        
+        timeline.appendChild(timelineItem);
+    });
+}
+
+// Initialize help modal with suggestions
+function initializeHelpModal() {
+    const categories = {
+        'integration': 'Integração',
+        'settings': 'Configurações', 
+        'troubleshooting': 'Solução de Problemas'
+    };
+    
+    Object.keys(categories).forEach(categoryKey => {
+        const categoryContainer = document.querySelector(`[data-category="${categoryKey}"]`);
+        const categoryTitle = categories[categoryKey];
+        
+        const suggestions = appData.helpSuggestions.filter(s => s.category === categoryKey);
+        
+        suggestions.forEach((suggestion, index) => {
+            const suggestionDiv = document.createElement('div');
+            suggestionDiv.className = 'help-suggestion';
+            
+            // Pre-select low priority items as specified
+            const isChecked = suggestion.priority === 'low' ? 'checked' : '';
+            const selectedClass = suggestion.priority === 'low' ? 'selected' : '';
+            
+            if (suggestion.priority === 'low') {
+                suggestionDiv.classList.add('selected');
+            }
+            
+            const suggestionId = `suggestion-${categoryKey}-${index}`;
+            
+            suggestionDiv.innerHTML = `
+                <input type="checkbox" id="${suggestionId}" ${isChecked}>
+                <label for="${suggestionId}">${suggestion.title}</label>
+                <span class="priority-badge ${suggestion.priority}">${suggestion.priority.toUpperCase()}</span>
+            `;
+            
+            categoryContainer.appendChild(suggestionDiv);
+            
+            // Add click event to toggle selection
+            suggestionDiv.addEventListener('click', function(e) {
+                if (e.target.type !== 'checkbox') {
+                    const checkbox = suggestionDiv.querySelector('input[type="checkbox"]');
+                    checkbox.checked = !checkbox.checked;
+                }
+                
+                suggestionDiv.classList.toggle('selected', suggestionDiv.querySelector('input[type="checkbox"]').checked);
+            });
+        });
+    });
+}
+
+// Setup event listeners
+function setupEventListeners() {
+    // Sidebar toggle for mobile
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleSidebar();
+        });
+    }
+    
+    // Navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute('data-section');
+            handleNavigation(sectionId);
+        });
+    });
+    
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                sidebar.classList.remove('show');
+            }
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('show');
+        }
+    });
+    
+    // Notification dropdown toggle
+    notificationBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        notificationDropdown.classList.toggle('show');
+    });
+    
+    // Close notification dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!notificationDropdown.contains(e.target) && !notificationBtn.contains(e.target)) {
+            notificationDropdown.classList.remove('show');
+        }
+    });
+    
+    // Need Help modal
+    needHelpBtn.addEventListener('click', function() {
+        modalOverlay.classList.add('show');
+    });
+    
+    closeModalBtn.addEventListener('click', function() {
+        modalOverlay.classList.remove('show');
+    });
+    
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('show');
+        }
+    });
+    
+    // Help form submission
+    sendHelpBtn.addEventListener('click', function() {
+        const message = helpInput.value.trim();
+        
+        if (message) {
+            // Show feedback
+            helpFeedback.textContent = 'Abrindo Alfredo...';
+            helpFeedback.classList.add('show');
+            
+            // Disable button temporarily
+            sendHelpBtn.disabled = true;
+            sendHelpBtn.textContent = 'Enviando...';
+            
+            // Simulate opening Alfredo chat
+            setTimeout(() => {
+                helpFeedback.textContent = 'Alfredo foi aberto! Você será redirecionado em breve.';
+                
+                setTimeout(() => {
+                    // Reset form
+                    helpInput.value = '';
+                    helpFeedback.classList.remove('show');
+                    sendHelpBtn.disabled = false;
+                    sendHelpBtn.textContent = 'Enviar';
+                }, 2000);
+            }, 1000);
+        } else {
+            // Show error if no message
+            helpFeedback.textContent = 'Por favor, digite sua pergunta antes de enviar.';
+            helpFeedback.classList.add('show');
+            helpFeedback.style.backgroundColor = 'rgba(var(--color-error-rgb), 0.1)';
+            helpFeedback.style.color = 'var(--color-error)';
+            helpFeedback.style.borderColor = 'rgba(var(--color-error-rgb), 0.2)';
+            
+            setTimeout(() => {
+                helpFeedback.classList.remove('show');
+                helpFeedback.style.backgroundColor = '';
+                helpFeedback.style.color = '';
+                helpFeedback.style.borderColor = '';
+            }, 3000);
+        }
+    });
+    
+    // Allow Enter key to submit help form
+    helpInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && e.ctrlKey) {
+            sendHelpBtn.click();
+        }
+    });
+    
+    // ESC key to close modal and sidebar
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            modalOverlay.classList.remove('show');
+            notificationDropdown.classList.remove('show');
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('show');
+            }
+        }
+    });
+}
+
+// Update notification badge count
+function updateNotificationBadge() {
+    const badge = document.getElementById('notificationBadge');
+    badge.textContent = appData.notifications.length;
+}
+
+// Call initial badge update
+updateNotificationBadge();
+
+// Export functions for potential external use
+window.PipeOneApp = {
+    handleNavigation,
+    toggleSidebar,
+    showContentSection,
+    setActiveNavItem
+};

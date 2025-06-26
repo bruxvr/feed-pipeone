@@ -1,192 +1,268 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PipeOne</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Layout Principal -->
-    <div class="dashboard-layout">
-      <!-- Menu Lateral Esquerdo -->
-      <aside class="sidebar-left" id="sidebar-left">
-        <div class="sidebar-header">
-          <div class="logo-section">
-            <span class="logo-icon">🚀</span>
-            <span class="logo-text"></span>
-          </div>
-          <button
-            class="hamburger-btn"
-            id="hamburger-btn"
-            aria-label="Toggle menu"
-          >
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-          </button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PipeOne Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar__header">
+            <div class="sidebar__user">
+                <div class="user-avatar">👤</div>
+                <div class="user-info">
+                    <div class="user-name">Admin</div>
+                    <div class="user-role">Usuário</div>
+                </div>
+            </div>
         </div>
-
-        <div class="profile-section">
-          <div class="profile-avatar">User</div>
-          <div class="profile-info">
-            <span class="profile-name">Usuário</span>
-            <span class="profile-role">Admin</span>
-          </div>
-        </div>
-
-        <nav class="sidebar-nav">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="#" class="nav-link active" data-menu="dashboard">
-                <span class="nav-icon">📊</span>
-                <span class="nav-text">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-menu="conversas">
-                <span class="nav-icon">💬</span>
-                <span class="nav-text">Conversas</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-menu="pipeline">
-                <span class="nav-icon">📋</span>
-                <span class="nav-text">Pipeline</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-menu="bulk">
-                <span class="nav-icon">📧</span>
-                <span class="nav-text">Bulk</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-menu="contatos">
-                <span class="nav-icon">👥</span>
-                <span class="nav-text">Contatos</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-menu="relatorios">
-                <span class="nav-icon">📈</span>
-                <span class="nav-text">Relatórios</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-menu="automacoes">
-                <span class="nav-icon">🤖</span>
-                <span class="nav-text">Automações</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-menu="configuracoes">
-                <span class="nav-icon">⚙️</span>
-                <span class="nav-text">Configurações</span>
-              </a>
-            </li>
-          </ul>
+        
+        <nav class="sidebar__nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-section="dashboard">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="conversas">
+                        <span class="nav-icon">💬</span>
+                        <span class="nav-text">Conversas</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="pipeline">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Pipeline</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="bulk">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Bulk</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="contatos">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Contatos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="relatorios">
+                        <span class="nav-icon">📈</span>
+                        <span class="nav-text">Relatórios</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="automacoes">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Automações</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="configuracoes">
+                        <span class="nav-icon">🔧</span>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
-      </aside>
+    </aside>
 
-      <!-- Feed Central -->
-      <main class="main-content">
-        <div class="content-header">
-          <h1 class="page-title">Dashboard PLG</h1>
-        </div>
+    <!-- Main Application Area -->
+    <div class="app-layout">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__left">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="header__brand">
+                    <h1>PipeOne</h1>
+                </div>
+            </div>
+            <div class="header__actions">
+                <div class="notification-wrapper">
+                    <button class="notification-btn" id="notificationBtn">
+                        <span class="notification-icon">🔔</span>
+                        <span class="notification-badge" id="notificationBadge">4</span>
+                    </button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <h3>Notificações</h3>
+                        </div>
+                        <div class="notification-list" id="notificationList">
+                            <!-- Notifications will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn--primary" id="needHelpBtn">Need Help?</button>
+            </div>
+        </header>
 
-        <div class="filters-section">
-          <div class="filter-buttons" id="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Todas</button>
-            <button
-              class="filter-btn"
-              data-filter="nova-funcionalidade"
-              style="--filter-color: #22c55e"
-            >
-              Nova Funcionalidade
-            </button>
-            <button
-              class="filter-btn"
-              data-filter="melhoria"
-              style="--filter-color: #3b82f6"
-            >
-              Melhoria
-            </button>
-            <button
-              class="filter-btn"
-              data-filter="correcao"
-              style="--filter-color: #f59e0b"
-            >
-              Correção
-            </button>
-            <button
-              class="filter-btn"
-              data-filter="integracao"
-              style="--filter-color: #8b5cf6"
-            >
-              Integração
-            </button>
-            <button
-              class="filter-btn"
-              data-filter="beta"
-              style="--filter-color: #ea580c"
-            >
-              Beta
-            </button>
-          </div>
-        </div>
+        <!-- Main Content Area -->
+        <main class="main-content" id="mainContent">
+            <!-- Dashboard Content -->
+            <div class="content-section active" id="dashboard-content">
+                <div class="dashboard">
+                    <!-- Left Section -->
+                    <div class="dashboard__left">
+                        <!-- Status Overview -->
+                        <section class="status-section card">
+                            <div class="card__header">
+                                <h2>Status dos Canais</h2>
+                            </div>
+                            <div class="card__body">
+                                <div class="status-grid" id="statusGrid">
+                                    <!-- Status items will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </section>
 
-        <div class="cards-grid" id="cards-grid">
-          <!-- Cards serão inseridos dinamicamente via JavaScript -->
-        </div>
-      </main>
+                        <!-- Bottom Section - Metrics and Help side by side -->
+                        <div class="bottom-section">
+                            <!-- User Metrics (Left Half) -->
+                            <section class="metrics-section card">
+                                <div class="card__header">
+                                    <h2>Métricas do Usuário</h2>
+                                </div>
+                                <div class="card__body">
+                                    <div class="metrics-grid" id="metricsGrid">
+                                        <!-- Metrics will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </section>
 
-      <!-- Sidebar Direita -->
-      <aside class="sidebar-right" id="sidebar-right">
-        <div class="news-header">
-          <h2 class="news-title">Últimas notícias</h2>
-          <button
-            class="close-news-btn"
-            id="close-news-btn"
-            aria-label="Fechar notícias"
-          >
-            <span>×</span>
-          </button>
-        </div>
+                            <!-- Help Field (Right Half) -->
+                            <section class="help-section card">
+                                <div class="card__header">
+                                    <h2>HELP</h2>
+                                </div>
+                                <div class="card__body">
+                                    <div class="help-form">
+                                        <textarea 
+                                            class="form-control help-input" 
+                                            id="helpInput" 
+                                            placeholder="Digite sua pergunta, mensagem ou dúvida..."
+                                            rows="4"
+                                        ></textarea>
+                                        <button class="btn btn--primary btn--full-width mt-8" id="sendHelpBtn">
+                                            Enviar
+                                        </button>
+                                        <div class="help-feedback" id="helpFeedback"></div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
 
-        <div class="news-list" id="news-list">
-          <!-- Notícias serão inseridas dinamicamente via JavaScript -->
-        </div>
-      </aside>
+                    <!-- Right Section - Timeline -->
+                    <aside class="dashboard__right">
+                        <section class="timeline-section card">
+                            <div class="card__header">
+                                <h2>TIMELINE</h2>
+                                <span class="timeline-subtitle">PLG Opportunities</span>
+                            </div>
+                            <div class="card__body">
+                                <div class="timeline" id="timeline">
+                                    <!-- Timeline items will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </section>
+                    </aside>
+                </div>
+            </div>
 
-      <!-- Botão sino flutuante (quando sidebar direita fechada) -->
-      <button class="bell-btn hidden" id="bell-btn" aria-label="Abrir notícias">
-        🔔
-      </button>
+            <!-- Placeholder sections for other menu items -->
+            <div class="content-section" id="conversas-content">
+                <div class="placeholder-content">
+                    <h2>Conversas</h2>
+                    <p>Esta seção está em desenvolvimento.</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="pipeline-content">
+                <div class="placeholder-content">
+                    <h2>Pipeline</h2>
+                    <p>Esta seção está em desenvolvimento.</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="bulk-content">
+                <div class="placeholder-content">
+                    <h2>Bulk</h2>
+                    <p>Esta seção está em desenvolvimento.</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="contatos-content">
+                <div class="placeholder-content">
+                    <h2>Contatos</h2>
+                    <p>Esta seção está em desenvolvimento.</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="relatorios-content">
+                <div class="placeholder-content">
+                    <h2>Relatórios</h2>
+                    <p>Esta seção está em desenvolvimento.</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="automacoes-content">
+                <div class="placeholder-content">
+                    <h2>Automações</h2>
+                    <p>Esta seção está em desenvolvimento.</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="configuracoes-content">
+                <div class="placeholder-content">
+                    <h2>Configurações</h2>
+                    <p>Esta seção está em desenvolvimento.</p>
+                </div>
+            </div>
+        </main>
     </div>
 
-    <!-- Modal Popup -->
-    <div class="modal-overlay hidden" id="modal-overlay">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="modal-title">Título</h3>
-          <button
-            class="modal-close-btn"
-            id="modal-close-btn"
-            aria-label="Fechar modal"
-          >
-            <span>×</span>
-          </button>
+    <!-- Need Help Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal__header">
+                <h2>Precisa de Ajuda?</h2>
+                <button class="modal__close" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal__body">
+                <div class="help-categories">
+                    <div class="help-category">
+                        <h3>Integração</h3>
+                        <div class="help-suggestions" data-category="integration">
+                            <!-- Suggestions will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="help-category">
+                        <h3>Configurações</h3>
+                        <div class="help-suggestions" data-category="settings">
+                            <!-- Suggestions will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="help-category">
+                        <h3>Solução de Problemas</h3>
+                        <div class="help-suggestions" data-category="troubleshooting">
+                            <!-- Suggestions will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body" id="modal-body">
-          <!-- Conteúdo do modal será inserido dinamicamente -->
-        </div>
-      </div>
     </div>
-
-    <!-- Overlay para mobile -->
-    <div class="mobile-overlay hidden" id="mobile-overlay"></div>
 
     <script src="app.js"></script>
-  </body>
+</body>
 </html>
