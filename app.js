@@ -27,11 +27,11 @@ const appData = {
     {"id": 5, "title": "Pipeline", "description": "Arraste contatos entre colunas para atualizar status"}
   ],
   timeline: [
-    {"title": "Mark as unread", "description": "Lets agents flag conversations as unread, making it easier to revisit and prioritize important messages.", "time": "há 23h", "badge": "PO-202", "category": "feature"},
-    {"title": "Block transfer/resolve for other agents' tickets", "description": "Prevents agents from transferring or resolving tickets assigned to others, ensuring ticket ownership and accountability.", "time": "há 3h", "badge": "PO-703", "category": "security"},
-    {"title": "Remove take over prompt", "description": "Removes the prompt asking if you want to take over a conversation already handled by another agent, streamlining workflow.", "time": "há 14h", "badge": "PO-755", "category": "improvement"},
-    {"title": "Quick template access via slash", "description": "Instantly access frequently used message templates by typing / in the message field, speeding up responses.", "time": "há 1 dia(s)", "badge": "PO-653", "category": "feature"},
-    {"title": "Display channel next to profile picture", "description": "Displays the communication channel icon next to each contact's profile photo, improving visual clarity and context.", "time": "há 18h", "badge": "PO-926", "category": "ui"}
+    {"title": "Mark as unread", "description": "Lets agents flag conversations as unread, making it easier to revisit and prioritize important messages.", "time": "há 23h", "badge": "feature", "category": "feature"},
+    {"title": "Block transfer/resolve for other agents' tickets", "description": "Prevents agents from transferring or resolving tickets assigned to others, ensuring ticket ownership and accountability.", "time": "há 3h", "badge": "security", "category": "security"},
+    {"title": "Remove take over prompt", "description": "Removes the prompt asking if you want to take over a conversation already handled by another agent, streamlining workflow.", "time": "há 14h", "badge": "improvement", "category": "improvement"},
+    {"title": "Quick template access via slash", "description": "Instantly access frequently used message templates by typing / in the message field, speeding up responses.", "time": "há 1 dia(s)", "badge": "feature", "category": "feature"},
+    {"title": "Display channel next to profile picture", "description": "Displays the communication channel icon next to each contact's profile photo, improving visual clarity and context.", "time": "há 18h", "badge": "UI", "category": "ui"}
   ],
   notifications: [
     {"type": "info", "title": "Atualização de Sistema", "message": "Nova versão disponível", "time": "10 min atrás"},
