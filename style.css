@@ -1,3 +1,4 @@
+
 :root {
   /* Colors */
   --color-background: rgba(252, 252, 249, 1);
@@ -648,9 +649,9 @@ select.form-control {
 }
 
 @font-face {
-  font-family: "FKGroteskNeue";
-  src: url("https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2")
-    format("woff2");
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
+    format('woff2');
 }
 
 :root {
@@ -1312,9 +1313,9 @@ select.form-control {
 }
 
 @font-face {
-  font-family: "FKGroteskNeue";
-  src: url("https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2")
-    format("woff2");
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
+    format('woff2');
 }
 
 /* Base layout */
@@ -1630,9 +1631,6 @@ body {
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-card-border);
   padding: var(--space-16);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .status-channels--compact .status-channels__title {
@@ -1642,21 +1640,19 @@ body {
 }
 
 .status-channels__list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-8);
-  flex: 1;
 }
 
 .status-item {
   display: flex;
   align-items: center;
-  gap: var(--space-6);
-  padding: var(--space-4) var(--space-8);
+  gap: var(--space-8);
+  padding: var(--space-6) var(--space-10);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background-color: var(--color-background);
-  min-height: 32px;
 }
 
 .status-item__indicator {
@@ -1685,16 +1681,15 @@ body {
 
 .status-item__name {
   font-weight: var(--font-weight-medium);
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   margin: 0;
-  line-height: 1.2;
 }
 
 .status-item__uptime {
-  font-size: 9px;
+  font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
   margin: var(--space-1) 0 0 0;
-  line-height: 1.2;
+  font-size: 10px;
 }
 
 /* Hints */
@@ -1703,9 +1698,7 @@ body {
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-card-border);
   padding: var(--space-16);
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
+  flex: 1;
 }
 
 .hints__header {
