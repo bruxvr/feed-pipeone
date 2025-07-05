@@ -1,174 +1,223 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PipeOne Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
-        <div class="sidebar__logo">
-            <h2>PipeOne</h2>
-        </div>
-        <nav class="sidebar__nav">
-            <a href="#" class="sidebar__nav-item sidebar__nav-item--active">
-                <span class="sidebar__nav-icon">📊</span>
-                Dashboard
-            </a>
-            <a href="#" class="sidebar__nav-item">
-                <span class="sidebar__nav-icon">💬</span>
-                Conversas
-            </a>
-            <a href="#" class="sidebar__nav-item">
-                <span class="sidebar__nav-icon">👥</span>
-                Contatos
-            </a>
-            <a href="#" class="sidebar__nav-item">
-                <span class="sidebar__nav-icon">🔄</span>
-                Pipeline
-            </a>
-            <a href="#" class="sidebar__nav-item">
-                <span class="sidebar__nav-icon">📈</span>
-                Relatórios
-            </a>
-            <a href="#" class="sidebar__nav-item">
-                <span class="sidebar__nav-icon">⚙️</span>
-                Configurações
-            </a>
-        </nav>
+      <div class="sidebar__logo">
+        <h2>PipeOne</h2>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__nav-item sidebar__nav-item--active">
+          <span class="sidebar__nav-icon">📊</span>
+          Dashboard
+        </a>
+        <a href="#" class="sidebar__nav-item">
+          <span class="sidebar__nav-icon">💬</span>
+          Conversas
+        </a>
+        <a href="#" class="sidebar__nav-item">
+          <span class="sidebar__nav-icon">👥</span>
+          Contatos
+        </a>
+        <a href="#" class="sidebar__nav-item">
+          <span class="sidebar__nav-icon">🔄</span>
+          Pipeline
+        </a>
+        <a href="#" class="sidebar__nav-item">
+          <span class="sidebar__nav-icon">📈</span>
+          Relatórios
+        </a>
+        <a href="#" class="sidebar__nav-item">
+          <span class="sidebar__nav-icon">⚙️</span>
+          Configurações
+        </a>
+      </nav>
     </aside>
 
     <!-- Main Content -->
     <main class="main">
-        <!-- Header -->
-        <header class="header">
-            <div class="header__title">
-                <h1>Dashboard</h1>
-                <p class="header__subtitle">Bem-vindo ao seu painel de controle</p>
-            </div>
-            <div class="header__actions">
-                <div class="notifications">
-                    <button class="notifications__toggle" id="notificationsToggle">
-                        🔔
-                        <span class="notifications__badge" id="notificationsBadge">4</span>
-                    </button>
-                    <div class="notifications__dropdown" id="notificationsDropdown">
-                        <div class="notifications__header">
-                            <h3>Notificações</h3>
-                            <span class="notifications__count">4 não lidas</span>
-                        </div>
-                        <div class="notifications__list" id="notificationsList">
-                            <!-- Notificações serão inseridas via JavaScript -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Dashboard Content -->
-        <div class="dashboard">
-            <!-- Left Dashboard Area -->
-            <div class="dashboard__left">
-                <!-- User Metrics -->
-                <section class="metrics">
-                    <h3 class="metrics__title">Métricas do Usuário</h3>
-                    <div class="metrics__grid" id="userMetrics">
-                        <!-- Metrics will be inserted via JavaScript -->
-                    </div>
-                </section>
-
-                <!-- Bottom Grid for Status+Hints and Communication -->
-                <div class="dashboard__bottom-grid">
-                    <!-- Left Column: Status + Hints -->
-                    <div class="dashboard__left-column">
-                        <!-- Status Channels (Compacto) -->
-                        <section class="status-channels status-channels--compact">
-                            <h3 class="status-channels__title">Status dos Canais</h3>
-                            <div class="status-channels__list" id="statusChannels">
-                                <!-- Status items will be inserted via JavaScript -->
-                            </div>
-                        </section>
-
-                        <!-- Hints Component -->
-                        <section class="hints">
-                            <div class="hints__header">
-                                <h3 class="hints__title">💡 Dicas de Uso</h3>
-                                <div class="hints__progress">
-                                    <div class="hints__progress-bar" id="hintsProgress"></div>
-                                </div>
-                            </div>
-                            <div class="hints__content" id="hintsContent">
-                                <!-- Hints will be inserted via JavaScript -->
-                            </div>
-                            <div class="hints__navigation">
-                                <div class="hints__dots" id="hintsDots">
-                                    <!-- Dots will be inserted via JavaScript -->
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Right Column: Communication -->
-                    <div class="dashboard__right-column">
-                        <section class="communication">
-                            <div class="communication__header">
-                                <h3 class="communication__title">Comunicação Interna</h3>
-                                <button class="btn btn--sm btn--primary" id="addCommunication">+ Novo</button>
-                            </div>
-                            <div class="communication__content">
-                                <div class="communication__form" id="communicationForm" style="display: none;">
-                                    <select class="form-control communication__type" id="communicationType">
-                                        <option value="announcement">Anúncio</option>
-                                        <option value="warning">Aviso</option>
-                                        <option value="info">Informação</option>
-                                    </select>
-                                    <input type="text" class="form-control communication__title-input" placeholder="Título do comunicado" id="communicationTitle">
-                                    <textarea class="form-control communication__message" placeholder="Mensagem..." id="communicationMessage"></textarea>
-                                    <div class="communication__actions">
-                                        <button class="btn btn--sm btn--primary" id="postCommunication">Publicar</button>
-                                        <button class="btn btn--sm btn--secondary" id="cancelCommunication">Cancelar</button>
-                                    </div>
-                                </div>
-                                <div class="communication__feed" id="communicationFeed">
-                                    <!-- Communication items will be inserted via JavaScript -->
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Timeline Area -->
-            <div class="dashboard__right">
-                <section class="timeline">
-                    <h3 class="timeline__title">Timeline</h3>
-                    <div class="timeline__content" id="timelineContent">
-                        <!-- Timeline items will be inserted via JavaScript -->
-                    </div>
-                </section>
-            </div>
+      <!-- Header -->
+      <header class="header">
+        <div class="header__title">
+          <h1>Dashboard</h1>
+          <p class="header__subtitle">Bem-vindo ao seu painel de controle</p>
         </div>
+        <div class="header__actions">
+          <div class="notifications">
+            <button class="notifications__toggle" id="notificationsToggle">
+              🔔
+              <span class="notifications__badge" id="notificationsBadge"
+                >4</span
+              >
+            </button>
+            <div class="notifications__dropdown" id="notificationsDropdown">
+              <div class="notifications__header">
+                <h3>Notificações</h3>
+                <span class="notifications__count">4 não lidas</span>
+              </div>
+              <div class="notifications__list" id="notificationsList">
+                <!-- Notificações serão inseridas via JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard">
+        <!-- Left Dashboard Area -->
+        <div class="dashboard__left">
+          <!-- User Metrics -->
+          <section class="metrics">
+            <h3 class="metrics__title">Métricas do Usuário</h3>
+            <div class="metrics__grid" id="userMetrics">
+              <!-- Metrics will be inserted via JavaScript -->
+            </div>
+          </section>
+
+          <!-- Bottom Grid for Status+Hints and Communication -->
+          <div class="dashboard__bottom-grid">
+            <!-- Left Column: Status + Hints -->
+            <div class="dashboard__left-column">
+              <!-- Hints Component -->
+              <section class="hints">
+                <div class="hints__header">
+                  <h3 class="hints__title">💡 Dicas de Uso</h3>
+                  <div class="hints__progress">
+                    <div class="hints__progress-bar" id="hintsProgress"></div>
+                  </div>
+                </div>
+                <div class="hints__content" id="hintsContent">
+                  <!-- Hints will be inserted via JavaScript -->
+                </div>
+                <div class="hints__navigation">
+                  <div class="hints__dots" id="hintsDots">
+                    <!-- Dots will be inserted via JavaScript -->
+                  </div>
+                </div>
+              </section>
+
+              <!-- Status Channels (Compacto) -->
+              <section class="status-channels status-channels--compact">
+                <h3 class="status-channels__title">Status dos Canais</h3>
+                <div class="status-channels__list" id="statusChannels">
+                  <!-- Status items will be inserted via JavaScript -->
+                </div>
+              </section>
+            </div>
+
+            <!-- Right Column: Communication -->
+            <div class="dashboard__right-column">
+              <section class="communication">
+                <div class="communication__header">
+                  <h3 class="communication__title">Comunicação Interna</h3>
+                  <button
+                    class="btn btn--sm btn--primary"
+                    id="addCommunication"
+                  >
+                    + Novo
+                  </button>
+                </div>
+                <div class="communication__content">
+                  <div class="communication__feed" id="communicationFeed">
+                    <!-- Communication items will be inserted via JavaScript -->
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Timeline Area -->
+        <div class="dashboard__right">
+          <section class="timeline">
+            <h3 class="timeline__title">Timeline</h3>
+            <div class="timeline__content" id="timelineContent">
+              <!-- Timeline items will be inserted via JavaScript -->
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
 
     <!-- Modal de Confirmação de Exclusão -->
-    <div class="modal-overlay" id="deleteModal" style="display: none;">
-        <div class="modal">
-            <div class="modal__header">
-                <h3 class="modal__title">Confirmar Exclusão</h3>
-            </div>
-            <div class="modal__body">
-                <p>Tem certeza que deseja excluir este comunicado?</p>
-                <p class="modal__warning">Esta ação não pode ser desfeita.</p>
-            </div>
-            <div class="modal__footer">
-                <button class="btn btn--sm btn--secondary" id="cancelDelete">Cancelar</button>
-                <button class="btn btn--sm btn--error" id="confirmDelete">Excluir</button>
-            </div>
+    <div class="modal-overlay" id="deleteModal" style="display: none">
+      <div class="modal">
+        <div class="modal__header">
+          <h3 class="modal__title">Confirmar Exclusão</h3>
         </div>
+        <div class="modal__body">
+          <p>Tem certeza que deseja excluir este comunicado?</p>
+          <p class="modal__warning">Esta ação não pode ser desfeita.</p>
+        </div>
+        <div class="modal__footer">
+          <button class="btn btn--sm btn--secondary" id="cancelDelete">
+            Cancelar
+          </button>
+          <button class="btn btn--sm btn--error" id="confirmDelete">
+            Excluir
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Nova Comunicação -->
+    <div class="modal-overlay" id="communicationModal" style="display: none">
+      <div class="modal">
+        <div class="modal__header">
+          <h3 class="modal__title">Nova Comunicação</h3>
+          <button class="modal__close" id="closeCommunicationModal">
+            &times;
+          </button>
+        </div>
+        <div class="modal__body">
+          <div class="form-group">
+            <label for="modalCommunicationType">Tipo</label>
+            <select class="form-control" id="modalCommunicationType">
+              <option value="announcement">Anúncio</option>
+              <option value="warning">Aviso</option>
+              <option value="info">Informação</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="modalCommunicationTitle">Título</label>
+            <input
+              type="text"
+              class="form-control"
+              id="modalCommunicationTitle"
+              placeholder="Título do comunicado"
+            />
+          </div>
+          <div class="form-group">
+            <label for="modalCommunicationMessage">Mensagem</label>
+            <textarea
+              class="form-control"
+              id="modalCommunicationMessage"
+              placeholder="Digite sua mensagem..."
+              rows="4"
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal__footer">
+          <button
+            class="btn btn--sm btn--secondary"
+            id="cancelCommunicationModal"
+          >
+            Cancelar
+          </button>
+          <button class="btn btn--sm btn--primary" id="saveCommunication">
+            Publicar
+          </button>
+        </div>
+      </div>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
