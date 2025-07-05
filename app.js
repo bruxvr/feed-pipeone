@@ -300,7 +300,6 @@ function renderCommunications() {
 
 function renderHints() {
   const container = document.getElementById("hintsContent");
-  const dotsContainer = document.getElementById("hintsDots");
 
   // Render hint content
   container.innerHTML = `
@@ -313,25 +312,6 @@ function renderHints() {
       }</p>
     </div>
   `;
-
-  // Render navigation dots
-  dotsContainer.innerHTML = appData.hints
-    .map(
-      (_, index) => `
-    <div class="hint-dot ${
-      index === state.currentHintIndex ? "active" : ""
-    }" data-index="${index}"></div>
-  `
-    )
-    .join("");
-
-  // Add click listeners to dots
-  dotsContainer.querySelectorAll(".hint-dot").forEach((dot) => {
-    dot.addEventListener("click", (e) => {
-      const index = parseInt(e.target.getAttribute("data-index"));
-      changeHint(index);
-    });
-  });
 }
 
 function renderTimeline() {

@@ -1114,29 +1114,6 @@ body {
   line-height: 1.4;
 }
 
-.hints__navigation {
-  margin-top: var(--space-12);
-}
-
-.hints__dots {
-  display: flex;
-  gap: var(--space-6);
-  justify-content: center;
-}
-
-.hint-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-border);
-  cursor: pointer;
-  transition: background-color var(--duration-fast) var(--ease-standard);
-}
-
-.hint-dot.active {
-  background-color: var(--color-primary);
-}
-
 /* Communication - Full Height */
 .communication {
   background-color: var(--color-surface);
